@@ -8,7 +8,7 @@ public class MeshDataExtractor : EditorWindow
     private string _meshFolderPath = "Assets/FolderPath";
     private StringBuilder _stringBuilder = new ();
 
-    [MenuItem("TanyaIsSexy/Mesh Data Extractor")]
+    [MenuItem("MeshPolyCounter/Mesh Data Extractor")]
     private static void ShowWindow()
     {
         GetWindow<MeshDataExtractor>("Mesh Data Extractor");
