@@ -36,12 +36,10 @@ public class MeshDataExtractor : EditorWindow
             string assetPath = AssetDatabase.GUIDToAssetPath(guid);
             Mesh mesh = AssetDatabase.LoadAssetAtPath<Mesh>(assetPath);
 
-            if (mesh != null)
-            {
-                int[] triangles = mesh.triangles;
+            if (!mesh) continue;
+            int[] triangles = mesh.triangles;
                 
-                _stringBuilder.Append($"{mesh.name} — {triangles.Length / 3} triangles \n");
-            }
+            _stringBuilder.Append($"{mesh.name} — {triangles.Length / 3} triangles \n");
         }
 
         string savePath = Path.Combine("Assets", "MeshData.txt");
